@@ -1,22 +1,23 @@
+import ExercisePage from '../../components/ExercisePage'
+
 export default function UseEffect() {
   return (
-    <div className="exercise">
-      <h1>useEffect</h1>
-      <p className="exercise-meta">Tier 1 — Core Hooks</p>
-      <div className="exercise-goals">
-        <h3>Practice goals</h3>
-        <ul>
-          <li>Fetch data on mount — handle loading and error states</li>
-          <li>Cleanup: interval that ticks and clears on unmount</li>
-          <li>Cleanup: event listener attached in effect, removed on cleanup</li>
-          <li>Dependency array — trigger effect only when a specific value changes</li>
-          <li>Understand: StrictMode double-invokes effects in dev — write idempotent cleanups</li>
-        </ul>
-      </div>
-      <hr className="exercise-divider" />
-      <div className="exercise-workspace">
-        {/* Your code goes here */}
-      </div>
-    </div>
+    <ExercisePage
+      breadcrumb={['React', 'Tier 1 — Core Hooks']}
+      title="useEffect"
+      difficulty="Beginner"
+      description="useEffect lets you synchronize a component with an external system — a server, a timer, the DOM. It runs after render and accepts a cleanup function that runs before the next effect or on unmount. The dependency array controls when it re-runs."
+      whatToBuild="A GitHub user profile card. The user types a username into an input (debounced 500ms). While they type, a previous request in-flight is cancelled. When the debounce settles, fetch from the GitHub API and display the user's avatar, name, bio, and follower count. Show a spinner while loading and a 'User not found' message on a 404."
+      keyConcepts={['useEffect', 'AbortController', 'cleanup', 'dependency array', 'async fetch', 'AbortError']}
+      workspaceFile="client/src/exercises/react/UseEffect.tsx"
+      hints={[
+        'Create an AbortController inside the effect, pass its signal to fetch(), and return () => controller.abort() as cleanup. When the username changes, React runs cleanup before the next effect — cancelling the previous request automatically.',
+        'Wrap the fetch in try/catch. If error.name === "AbortError", ignore it — that is an intentional cancellation, not a real error. Only set the error state for genuine failures like a 404.',
+        'Implement debouncing inside the effect with a timeout: const t = setTimeout(doFetch, 500). Return () => clearTimeout(t) as cleanup alongside the abort. Both cleanups run on each re-render.',
+        'The dependency array should be [username]. An empty [] runs only on mount. Omitting the array runs on every render. Never put the fetch function itself in the array — define it inside the effect where it has access to the current username.',
+      ]}
+    >
+      {/* Your code goes here */}
+    </ExercisePage>
   )
 }
