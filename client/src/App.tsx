@@ -4,6 +4,7 @@ import './App.css'
 import Home from './exercises/Home'
 
 // React exercises
+import Scratch from './exercises/react/Scratch'
 import UseState from './exercises/react/UseState'
 import UseEffect from './exercises/react/UseEffect'
 import UseRef from './exercises/react/UseRef'
@@ -45,6 +46,10 @@ const nav = [
   {
     group: 'React',
     tiers: [
+      {
+        label: 'Scratchpad',
+        items: [{ path: 'scratch', label: 'Scratch' }],
+      },
       {
         label: 'Tier 1 — Core Hooks',
         items: [
@@ -168,6 +173,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
 
           {/* React */}
+          <Route path="/exercises/react/scratch" element={<Scratch />} />
           <Route path="/exercises/react/use-state" element={<UseState />} />
           <Route path="/exercises/react/use-effect" element={<UseEffect />} />
           <Route path="/exercises/react/use-ref" element={<UseRef />} />
