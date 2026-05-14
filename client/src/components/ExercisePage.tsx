@@ -8,6 +8,7 @@ interface ExercisePageProps {
   whatToBuild: string
   keyConcepts: string[]
   workspaceFile: string
+  workspaceFiles?: string[]
   hints: string[]
   children?: React.ReactNode
 }
@@ -89,6 +90,7 @@ export default function ExercisePage({
   whatToBuild,
   keyConcepts,
   workspaceFile,
+  workspaceFiles,
   hints,
   children,
 }: ExercisePageProps) {
@@ -145,19 +147,23 @@ export default function ExercisePage({
         </div>
       </div>
 
-      {/* Workspace file */}
+      {/* Workspace file(s) */}
       <div className="mb-8">
         <h3 className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--accent)' }}>
-          Workspace file
+          Workspace {workspaceFiles ? 'files' : 'file'}
         </h3>
         <div
-          className="flex items-center gap-3 rounded-lg px-4 py-3"
+          className="flex flex-col gap-2 rounded-lg px-4 py-3"
           style={{ background: 'var(--code-bg)', border: '1px solid var(--border)' }}
         >
-          <span className="text-xs" style={{ color: 'var(--text)' }}>Open in your editor:</span>
-          <code className="text-xs" style={{ color: 'var(--text-h)', fontFamily: 'var(--mono)', background: 'transparent', padding: 0 }}>
-            {workspaceFile}
-          </code>
+          {[workspaceFile, ...(workspaceFiles ?? [])].map((f) => (
+            <div key={f} className="flex items-center gap-3">
+              <span className="text-xs" style={{ color: 'var(--text)' }}>Open in your editor:</span>
+              <code className="text-xs" style={{ color: 'var(--text-h)', fontFamily: 'var(--mono)', background: 'transparent', padding: 0 }}>
+                {f}
+              </code>
+            </div>
+          ))}
         </div>
       </div>
 

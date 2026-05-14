@@ -42,4 +42,23 @@ router.delete('/:id', async (_req, res) => {
   res.sendStatus(204)
 })
 
+// GET /users/:id/posts
+// Exercise: RelationsAPI (E2E User Posts)
+//
+// Use the Drizzle Relations API (db.query) instead of a raw join:
+//   const result = await db.query.users.findFirst({
+//     where: eq(users.id, Number(req.params.id)),
+//     with: { posts: true },
+//   })
+//   if (!result) return res.status(404).json({ error: 'Not found' })
+//   const { posts, ...user } = result
+//   res.json({ user, posts })
+//
+// Compare this with the explicit innerJoin in GET /posts/with-authors —
+// the Relations API returns nested objects; joins return flat merged rows.
+router.get('/:id/posts', async (_req, res) => {
+  // TODO: use db.query.users.findFirst({ with: { posts: true } })
+  res.json({ user: null, posts: [] })
+})
+
 export default router
