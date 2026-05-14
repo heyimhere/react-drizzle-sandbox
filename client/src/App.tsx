@@ -24,6 +24,16 @@ import TypescriptProps from './exercises/react/TypescriptProps'
 import EventTypes from './exercises/react/EventTypes'
 import CustomHooksTyping from './exercises/react/CustomHooksTyping'
 
+// E2E exercises
+import TodosCrud        from './exercises/e2e/TodosCrud'
+import UsersCrud        from './exercises/e2e/UsersCrud'
+import PostsWithAuthors from './exercises/e2e/PostsWithAuthors'
+import PostsSearch      from './exercises/e2e/PostsSearch'
+import Dashboard        from './exercises/e2e/Dashboard'
+import UserPosts        from './exercises/e2e/UserPosts'
+import NewUserWithPost  from './exercises/e2e/NewUserWithPost'
+import AdvancedSearch   from './exercises/e2e/AdvancedSearch'
+
 // Drizzle exercises
 import SchemaDefinition from './exercises/drizzle/SchemaDefinition'
 import Migrations from './exercises/drizzle/Migrations'
@@ -42,7 +52,11 @@ import PreparedStatements from './exercises/drizzle/PreparedStatements'
 import SqlTag from './exercises/drizzle/SqlTag'
 import TypeInference from './exercises/drizzle/TypeInference'
 
-const nav = [
+const nav: Array<{
+  group: string
+  groupPath?: string
+  tiers: Array<{ label: string; items: Array<{ path: string; label: string }> }>
+}> = [
   {
     group: 'React',
     tiers: [
@@ -136,6 +150,25 @@ const nav = [
       },
     ],
   },
+  {
+    group: 'End to End',
+    groupPath: 'e2e',
+    tiers: [
+      {
+        label: 'Full Stack Exercises',
+        items: [
+          { path: 'todos-crud',         label: 'Todos — Full CRUD' },
+          { path: 'users-crud',         label: 'Users — CRUD + Constraints' },
+          { path: 'posts-with-authors', label: 'Posts + Authors — JOIN' },
+          { path: 'posts-search',       label: 'Posts Search — WHERE + Pagination' },
+          { path: 'dashboard',          label: 'Stats Dashboard — Aggregates' },
+          { path: 'user-posts',         label: 'User Posts — Relations API' },
+          { path: 'new-user-with-post', label: 'New User + Post — Transaction' },
+          { path: 'advanced-search',    label: 'Advanced Search — Prepared Statements' },
+        ],
+      },
+    ],
+  },
 ]
 
 export default function App() {
@@ -154,7 +187,7 @@ export default function App() {
                 {tier.items.map((item) => (
                   <NavLink
                     key={item.path}
-                    to={`/exercises/${section.group.toLowerCase()}/${item.path}`}
+                    to={`/exercises/${section.groupPath ?? section.group.toLowerCase()}/${item.path}`}
                     className={({ isActive }) =>
                       'sidebar-link' + (isActive ? ' active' : '')
                     }
@@ -210,6 +243,16 @@ export default function App() {
           <Route path="/exercises/drizzle/prepared-statements" element={<PreparedStatements />} />
           <Route path="/exercises/drizzle/sql-tag" element={<SqlTag />} />
           <Route path="/exercises/drizzle/type-inference" element={<TypeInference />} />
+
+          {/* End to End */}
+          <Route path="/exercises/e2e/todos-crud"         element={<TodosCrud />} />
+          <Route path="/exercises/e2e/users-crud"         element={<UsersCrud />} />
+          <Route path="/exercises/e2e/posts-with-authors" element={<PostsWithAuthors />} />
+          <Route path="/exercises/e2e/posts-search"       element={<PostsSearch />} />
+          <Route path="/exercises/e2e/dashboard"          element={<Dashboard />} />
+          <Route path="/exercises/e2e/user-posts"         element={<UserPosts />} />
+          <Route path="/exercises/e2e/new-user-with-post" element={<NewUserWithPost />} />
+          <Route path="/exercises/e2e/advanced-search"    element={<AdvancedSearch />} />
         </Routes>
       </main>
     </div>
