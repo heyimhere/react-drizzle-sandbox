@@ -1,7 +1,12 @@
 import 'dotenv/config'
 import express from 'express'
+import todosRouter from './routes/todos'
+import usersRouter from './routes/users'
+import postsRouter from './routes/posts'
+import transactionsRouter from './routes/transactions'
+import { errorHandler } from './middleware/errorHandler'
 
-const app = express()
+export const app = express()
 const PORT = process.env['PORT'] ?? 3001
 
 app.use(express.json())
@@ -21,10 +26,17 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok' })
 })
 
-// Register exercise routers here, e.g.:
-// import todosRouter from './routes/todos.js'
-// app.use('/todos', todosRouter)
+app.use('/todos', todosRouter)
+app.use('/users', usersRouter)
+app.use('/posts', postsRouter)
+app.use('/transactions', transactionsRouter)
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+// Must be registered after all routes — Express identifies error handlers by the 4-argument signature
+app.use(errorHandler)
+
+// Guard prevents the server from binding a port when supertest imports this module during tests
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+  })
+}

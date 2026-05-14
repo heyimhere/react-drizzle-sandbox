@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "esnext",
-    "types": ["node"],
+    "types": ["node", "vitest/globals"],
 
     "strict": true,
     "noUncheckedIndexedAccess": true,
