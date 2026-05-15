@@ -25,6 +25,7 @@ import EventTypes from './exercises/react/EventTypes'
 import CustomHooksTyping from './exercises/react/CustomHooksTyping'
 
 // E2E exercises
+import E2EScratch       from './exercises/e2e/Scratch'
 import TodosCrud        from './exercises/e2e/TodosCrud'
 import UsersCrud        from './exercises/e2e/UsersCrud'
 import PostsWithAuthors from './exercises/e2e/PostsWithAuthors'
@@ -155,6 +156,10 @@ const nav: Array<{
     groupPath: 'e2e',
     tiers: [
       {
+        label: 'Scratchpad',
+        items: [{ path: 'scratch', label: 'Scratch' }],
+      },
+      {
         label: 'Full Stack Exercises',
         items: [
           { path: 'todos-crud',         label: 'Todos — Full CRUD' },
@@ -245,6 +250,7 @@ export default function App() {
           <Route path="/exercises/drizzle/type-inference" element={<TypeInference />} />
 
           {/* End to End */}
+          <Route path="/exercises/e2e/scratch"            element={<E2EScratch />} />
           <Route path="/exercises/e2e/todos-crud"         element={<TodosCrud />} />
           <Route path="/exercises/e2e/users-crud"         element={<UsersCrud />} />
           <Route path="/exercises/e2e/posts-with-authors" element={<PostsWithAuthors />} />
