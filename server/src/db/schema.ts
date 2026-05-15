@@ -1,12 +1,21 @@
 import { pgTable, serial, text, boolean, timestamp, integer, index } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm'
 
+// --- scratch --------------- 
+// Used by: scratch e2e workflow
+export const scratchItems = pgTable('scratch_items', {
+  id: serial('id').primaryKey(),
+  label: text('label').notNull(),
+  done: boolean('done').notNull().default(false),
+  createdAt: timestamp('created_at').defaultNow(),
+})
+
 // ── todos ─────────────────────────────────────────────────────────────────────
 // Used by: Insert, Select, Update, Delete, Transactions (Tier 2) exercises
 export const todos = pgTable('todos', {
-  id:        serial('id').primaryKey(),
-  title:     text('title').notNull(),
-  done:      boolean('done').notNull().default(false),
+  id: serial('id').primaryKey(),
+  title: text('title').notNull(),
+  done: boolean('done').notNull().default(false),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 
@@ -14,9 +23,9 @@ export const todos = pgTable('todos', {
 // Used by: WhereClauses, Joins, RelationsApi, TypeInference, PreparedStatements
 // Demonstrates: unique constraint
 export const users = pgTable('users', {
-  id:        serial('id').primaryKey(),
-  name:      text('name').notNull(),
-  email:     text('email').notNull().unique(),
+  id: serial('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 
@@ -26,10 +35,10 @@ export const users = pgTable('users', {
 export const posts = pgTable(
   'posts',
   {
-    id:        serial('id').primaryKey(),
-    userId:    integer('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
-    title:     text('title').notNull(),
-    body:      text('body').notNull().default(''),
+    id: serial('id').primaryKey(),
+    userId: integer('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+    title: text('title').notNull(),
+    body: text('body').notNull().default(''),
     createdAt: timestamp('created_at').defaultNow().notNull(),
   },
   (t) => [

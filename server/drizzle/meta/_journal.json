@@ -15,6 +15,20 @@
       "when": 1778730214056,
       "tag": "0001_futuristic_morlun",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778809863833,
+      "tag": "0002_wild_moonstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1778820129693,
+      "tag": "0003_normal_morbius",
+      "breakpoints": true
     }
   ]
 }
