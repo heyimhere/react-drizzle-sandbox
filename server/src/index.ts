@@ -5,6 +5,7 @@ import usersRouter from './routes/users'
 import postsRouter from './routes/posts'
 import transactionsRouter from './routes/transactions'
 import statsRouter from './routes/stats'
+import scratchRouter from './routes/scratch'
 import { errorHandler } from './middleware/errorHandler'
 
 export const app = express()
@@ -32,6 +33,7 @@ app.use('/users', usersRouter)
 app.use('/posts', postsRouter)
 app.use('/transactions', transactionsRouter)
 app.use('/stats', statsRouter)
+app.use('/scratch', scratchRouter)
 
 // Must be registered after all routes — Express identifies error handlers by the 4-argument signature
 app.use(errorHandler)
