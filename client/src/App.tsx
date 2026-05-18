@@ -35,6 +35,13 @@ import UserPosts        from './exercises/e2e/UserPosts'
 import NewUserWithPost  from './exercises/e2e/NewUserWithPost'
 import AdvancedSearch   from './exercises/e2e/AdvancedSearch'
 
+// Component showcase
+import ButtonShowcase      from './exercises/components/Button'
+import NavbarShowcase      from './exercises/components/Navbar'
+import FormShowcase        from './exercises/components/Form'
+import FooterShowcase      from './exercises/components/Footer'
+import AnimatedLayoutShowcase from './exercises/components/AnimatedLayout'
+
 // Drizzle exercises
 import SchemaDefinition from './exercises/drizzle/SchemaDefinition'
 import Migrations from './exercises/drizzle/Migrations'
@@ -152,6 +159,22 @@ const nav: Array<{
     ],
   },
   {
+    group: 'Components',
+    groupPath: 'components',
+    tiers: [
+      {
+        label: 'UI Elements',
+        items: [
+          { path: 'button',           label: 'Button' },
+          { path: 'navbar',           label: 'Navbar' },
+          { path: 'form',             label: 'Form' },
+          { path: 'footer',           label: 'Footer' },
+          { path: 'animated-layout',  label: 'Animated Layout' },
+        ],
+      },
+    ],
+  },
+  {
     group: 'End to End',
     groupPath: 'e2e',
     tiers: [
@@ -248,6 +271,13 @@ export default function App() {
           <Route path="/exercises/drizzle/prepared-statements" element={<PreparedStatements />} />
           <Route path="/exercises/drizzle/sql-tag" element={<SqlTag />} />
           <Route path="/exercises/drizzle/type-inference" element={<TypeInference />} />
+
+          {/* Components */}
+          <Route path="/exercises/components/button"           element={<ButtonShowcase />} />
+          <Route path="/exercises/components/navbar"           element={<NavbarShowcase />} />
+          <Route path="/exercises/components/form"             element={<FormShowcase />} />
+          <Route path="/exercises/components/footer"           element={<FooterShowcase />} />
+          <Route path="/exercises/components/animated-layout"  element={<AnimatedLayoutShowcase />} />
 
           {/* End to End */}
           <Route path="/exercises/e2e/scratch"            element={<E2EScratch />} />
