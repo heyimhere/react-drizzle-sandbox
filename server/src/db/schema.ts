@@ -1,13 +1,23 @@
 import { pgTable, serial, text, boolean, timestamp, integer, index } from 'drizzle-orm/pg-core'
 import { relations } from 'drizzle-orm'
 
-// --- scratch --------------- 
+// --- scratch ---------------
 // Used by: scratch e2e workflow
 export const scratchItems = pgTable('scratch_items', {
   id: serial('id').primaryKey(),
   label: text('label').notNull(),
   done: boolean('done').notNull().default(false),
   createdAt: timestamp('created_at').defaultNow(),
+})
+
+// Audit log for scratchItems — written from inside the POST transaction.
+// onDelete: 'cascade' so log rows vanish when the parent item is deleted
+// (otherwise we'd leak dangling references).
+export const scratchLog = pgTable('scratch_log', {
+  id: serial('id').primaryKey(),
+  scratchItemId: integer('scratch_item_id').notNull().references(() => scratchItems.id, { onDelete: 'cascade' }),
+  event: text('event').notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 
 // ── todos ─────────────────────────────────────────────────────────────────────
