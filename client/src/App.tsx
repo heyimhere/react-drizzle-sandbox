@@ -42,6 +42,18 @@ import FormShowcase        from './exercises/components/Form'
 import FooterShowcase      from './exercises/components/Footer'
 import AnimatedLayoutShowcase from './exercises/components/AnimatedLayout'
 
+// UI Lab — clone-to-rebuild aesthetic practice
+import StyledInputPage         from './exercises/ui-lab/StyledInput'
+import AnimatedButtonPage      from './exercises/ui-lab/AnimatedButton'
+import NewsletterCardPage      from './exercises/ui-lab/NewsletterCard'
+import TerminalContactPage     from './exercises/ui-lab/TerminalContact'
+import MagicLinkScreenPage     from './exercises/ui-lab/MagicLinkScreen'
+import EventDashboardPage      from './exercises/ui-lab/EventDashboard'
+import KanbanBoardPage         from './exercises/ui-lab/KanbanBoard'
+import InfiniteScrollFeedPage  from './exercises/ui-lab/InfiniteScrollFeed'
+import GithubUserCardPage      from './exercises/ui-lab/GithubUserCard'
+import JsonPlaceholderFeedPage from './exercises/ui-lab/JsonPlaceholderFeed'
+
 // Drizzle exercises
 import SchemaDefinition from './exercises/drizzle/SchemaDefinition'
 import Migrations from './exercises/drizzle/Migrations'
@@ -159,6 +171,42 @@ const nav: Array<{
     ],
   },
   {
+    group: 'UI Lab',
+    groupPath: 'ui-lab',
+    tiers: [
+      {
+        label: 'Tier 1 — Atoms',
+        items: [
+          { path: 'styled-input',     label: 'Styled Input' },
+          { path: 'animated-button',  label: 'Animated Button' },
+        ],
+      },
+      {
+        label: 'Tier 2 — Cards & Forms',
+        items: [
+          { path: 'newsletter-card',  label: 'Newsletter Card' },
+          { path: 'terminal-contact', label: 'Terminal Contact' },
+          { path: 'magic-link',       label: 'Magic Link Screen' },
+        ],
+      },
+      {
+        label: 'Tier 3 — Layouts',
+        items: [
+          { path: 'event-dashboard',  label: 'Event Dashboard' },
+          { path: 'kanban-board',     label: 'Kanban Board' },
+          { path: 'infinite-scroll',  label: 'Infinite Scroll Feed' },
+        ],
+      },
+      {
+        label: 'Tier 4 — API-Driven',
+        items: [
+          { path: 'github-user',      label: 'GitHub User Card' },
+          { path: 'jsonplaceholder',  label: 'JSONPlaceholder Feed' },
+        ],
+      },
+    ],
+  },
+  {
     group: 'Components',
     groupPath: 'components',
     tiers: [
@@ -271,6 +319,18 @@ export default function App() {
           <Route path="/exercises/drizzle/prepared-statements" element={<PreparedStatements />} />
           <Route path="/exercises/drizzle/sql-tag" element={<SqlTag />} />
           <Route path="/exercises/drizzle/type-inference" element={<TypeInference />} />
+
+          {/* UI Lab */}
+          <Route path="/exercises/ui-lab/styled-input"     element={<StyledInputPage />} />
+          <Route path="/exercises/ui-lab/animated-button"  element={<AnimatedButtonPage />} />
+          <Route path="/exercises/ui-lab/newsletter-card"  element={<NewsletterCardPage />} />
+          <Route path="/exercises/ui-lab/terminal-contact" element={<TerminalContactPage />} />
+          <Route path="/exercises/ui-lab/magic-link"       element={<MagicLinkScreenPage />} />
+          <Route path="/exercises/ui-lab/event-dashboard"  element={<EventDashboardPage />} />
+          <Route path="/exercises/ui-lab/kanban-board"     element={<KanbanBoardPage />} />
+          <Route path="/exercises/ui-lab/infinite-scroll"  element={<InfiniteScrollFeedPage />} />
+          <Route path="/exercises/ui-lab/github-user"      element={<GithubUserCardPage />} />
+          <Route path="/exercises/ui-lab/jsonplaceholder"  element={<JsonPlaceholderFeedPage />} />
 
           {/* Components */}
           <Route path="/exercises/components/button"           element={<ButtonShowcase />} />
