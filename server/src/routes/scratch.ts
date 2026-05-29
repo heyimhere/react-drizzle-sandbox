@@ -59,8 +59,8 @@ const countPending = db
 
 // Group by filter — clean lookup at request time, no branching mess.
 const queries = {
-  all:     { items: itemsAll,     count: countAll     },
-  done:    { items: itemsDone,    count: countDone    },
+  all: { items: itemsAll, count: countAll },
+  done: { items: itemsDone, count: countDone },
   pending: { items: itemsPending, count: countPending },
 } as const;
 
@@ -73,7 +73,7 @@ router.get('/', async (req, res) => {
     const filterKey = done === 'true' ? 'done' : done === 'false' ? 'pending' : 'all';
     const { items: itemsQuery, count: countQuery } = queries[filterKey];
 
-    const limitNum  = Math.min(Math.max(Number(limit)  || 20, 1), 100);
+    const limitNum = Math.min(Math.max(Number(limit) || 20, 1), 100);
     const offsetNum = Math.max(Number(offset) || 0, 0);
 
     const [rows, totalRows] = await Promise.all([
@@ -84,7 +84,7 @@ router.get('/', async (req, res) => {
     const total = totalRows[0]?.value ?? 0;
     res.json({ rows, total });
   } catch (err) {
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal server error' });
   }
 })
 

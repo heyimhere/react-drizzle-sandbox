@@ -1,11 +1,10 @@
+import ScratchPlaceholder from '../_shared/ScratchPlaceholder'
+
 export default function Scratch() {
+  // wipe everything below and rebuild
   return (
-    <div className="text-center text-sm" style={{ color: 'var(--text)' }}>
-      <p className="font-mono text-xs tracking-wider uppercase mb-2" style={{ color: 'var(--accent)' }}>
-        your turn
-      </p>
-      <p>Rebuild the segmented pill nav. Animated black pill via motion <code>layoutId</code>.</p>
-      {/* Your code goes here */}
-    </div>
+    <ScratchPlaceholder
+      message={<>Rebuild the segmented pill nav. Animated black pill via motion <code>layoutId</code>.</>}
+    />
   )
 }
