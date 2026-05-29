@@ -53,6 +53,12 @@ import KanbanBoardPage         from './exercises/ui-lab/KanbanBoard'
 import InfiniteScrollFeedPage  from './exercises/ui-lab/InfiniteScrollFeed'
 import GithubUserCardPage      from './exercises/ui-lab/GithubUserCard'
 import JsonPlaceholderFeedPage from './exercises/ui-lab/JsonPlaceholderFeed'
+import PillTabNavPage          from './exercises/ui-lab/PillTabNav'
+import IconRailSidebarPage     from './exercises/ui-lab/IconRailSidebar'
+import CourseCardPage          from './exercises/ui-lab/CourseCard'
+import FriendsScorePage        from './exercises/ui-lab/FriendsScore'
+import PerformanceChartPage    from './exercises/ui-lab/PerformanceChart'
+import EducationDashboardPage  from './exercises/ui-lab/EducationDashboard'
 
 // Drizzle exercises
 import SchemaDefinition from './exercises/drizzle/SchemaDefinition'
@@ -179,6 +185,8 @@ const nav: Array<{
         items: [
           { path: 'styled-input',     label: 'Styled Input' },
           { path: 'animated-button',  label: 'Animated Button' },
+          { path: 'pill-tab-nav',     label: 'Pill Tab Nav' },
+          { path: 'icon-rail',        label: 'Icon Rail Sidebar' },
         ],
       },
       {
@@ -187,14 +195,18 @@ const nav: Array<{
           { path: 'newsletter-card',  label: 'Newsletter Card' },
           { path: 'terminal-contact', label: 'Terminal Contact' },
           { path: 'magic-link',       label: 'Magic Link Screen' },
+          { path: 'course-card',      label: 'Course Card' },
+          { path: 'friends-score',    label: 'Friends Score' },
         ],
       },
       {
         label: 'Tier 3 — Layouts',
         items: [
-          { path: 'event-dashboard',  label: 'Event Dashboard' },
-          { path: 'kanban-board',     label: 'Kanban Board' },
-          { path: 'infinite-scroll',  label: 'Infinite Scroll Feed' },
+          { path: 'event-dashboard',     label: 'Event Dashboard' },
+          { path: 'kanban-board',        label: 'Kanban Board' },
+          { path: 'infinite-scroll',     label: 'Infinite Scroll Feed' },
+          { path: 'performance-chart',   label: 'Performance Chart' },
+          { path: 'education-dashboard', label: 'Education Dashboard' },
         ],
       },
       {
@@ -330,7 +342,13 @@ export default function App() {
           <Route path="/exercises/ui-lab/kanban-board"     element={<KanbanBoardPage />} />
           <Route path="/exercises/ui-lab/infinite-scroll"  element={<InfiniteScrollFeedPage />} />
           <Route path="/exercises/ui-lab/github-user"      element={<GithubUserCardPage />} />
-          <Route path="/exercises/ui-lab/jsonplaceholder"  element={<JsonPlaceholderFeedPage />} />
+          <Route path="/exercises/ui-lab/jsonplaceholder"      element={<JsonPlaceholderFeedPage />} />
+          <Route path="/exercises/ui-lab/pill-tab-nav"         element={<PillTabNavPage />} />
+          <Route path="/exercises/ui-lab/icon-rail"            element={<IconRailSidebarPage />} />
+          <Route path="/exercises/ui-lab/course-card"          element={<CourseCardPage />} />
+          <Route path="/exercises/ui-lab/friends-score"        element={<FriendsScorePage />} />
+          <Route path="/exercises/ui-lab/performance-chart"    element={<PerformanceChartPage />} />
+          <Route path="/exercises/ui-lab/education-dashboard"  element={<EducationDashboardPage />} />
 
           {/* Components */}
           <Route path="/exercises/components/button"           element={<ButtonShowcase />} />
