@@ -32,16 +32,39 @@
 }
 
 .sidebar-section {
-  margin-top: 0.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+.sidebar-section:first-of-type {
+  margin-top: 0;
+  padding-top: 0.5rem;
+  border-top: none;
 }
 
 .sidebar-group-label {
-  padding: 0.75rem 1rem 0.25rem;
-  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem 0.5rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--text) 70%, transparent);
+  color: var(--text-h);
+}
+
+.sidebar-group-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--accent-border);
 }
 
 .sidebar-tier {
