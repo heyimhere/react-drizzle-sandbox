@@ -57,12 +57,64 @@ export const posts = pgTable(
   ],
 )
 
+// ── comments ──────────────────────────────────────────────────────────────────
+// Used by: E2E CommentsThreaded exercise
+// Demonstrates: self-referential foreign key for parent/child threading
+export const comments = pgTable(
+  'comments',
+  {
+    id: serial('id').primaryKey(),
+    postId: integer('post_id').notNull().references(() => posts.id, { onDelete: 'cascade' }),
+    parentId: integer('parent_id'),
+    body: text('body').notNull(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => [
+    index('comments_post_id_idx').on(t.postId),
+    index('comments_parent_id_idx').on(t.parentId),
+  ],
+)
+
+// ── tags + post_tags (many-to-many) ───────────────────────────────────────────
+// Used by: E2E TagsManyToMany exercise
+export const tags = pgTable('tags', {
+  id: serial('id').primaryKey(),
+  name: text('name').notNull().unique(),
+})
+
+export const postTags = pgTable(
+  'post_tags',
+  {
+    postId: integer('post_id').notNull().references(() => posts.id, { onDelete: 'cascade' }),
+    tagId: integer('tag_id').notNull().references(() => tags.id, { onDelete: 'cascade' }),
+  },
+  (t) => [
+    index('post_tags_post_id_idx').on(t.postId),
+    index('post_tags_tag_id_idx').on(t.tagId),
+  ],
+)
+
 // ── relations (Drizzle Relations API) ─────────────────────────────────────────
 // Used by: RelationsApi exercise — db.query.users.findMany({ with: { posts: true } })
 export const usersRelations = relations(users, ({ many }) => ({
   posts: many(posts),
 }))
 
-export const postsRelations = relations(posts, ({ one }) => ({
+export const postsRelations = relations(posts, ({ one, many }) => ({
   author: one(users, { fields: [posts.userId], references: [users.id] }),
+  comments: many(comments),
+  postTags: many(postTags),
+}))
+
+export const commentsRelations = relations(comments, ({ one }) => ({
+  post: one(posts, { fields: [comments.postId], references: [posts.id] }),
+}))
+
+export const tagsRelations = relations(tags, ({ many }) => ({
+  postTags: many(postTags),
+}))
+
+export const postTagsRelations = relations(postTags, ({ one }) => ({
+  post: one(posts, { fields: [postTags.postId], references: [posts.id] }),
+  tag: one(tags, { fields: [postTags.tagId], references: [tags.id] }),
 }))
