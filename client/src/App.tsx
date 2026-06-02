@@ -9,20 +9,39 @@ import UseState from './exercises/react/UseState'
 import UseEffect from './exercises/react/UseEffect'
 import UseRef from './exercises/react/UseRef'
 import UseMemoCallback from './exercises/react/UseMemoCallback'
+import UseStateForm from './exercises/react/UseStateForm'
+import UseEffectDebounce from './exercises/react/UseEffectDebounce'
+import UseRefIntersection from './exercises/react/UseRefIntersection'
+import UseMemoVirtualList from './exercises/react/UseMemoVirtualList'
 import ContextUseContext from './exercises/react/ContextUseContext'
 import CustomHooks from './exercises/react/CustomHooks'
 import CompoundComponents from './exercises/react/CompoundComponents'
 import RenderProps from './exercises/react/RenderProps'
 import ControlledInputs from './exercises/react/ControlledInputs'
+import ProviderComposition from './exercises/react/ProviderComposition'
+import PolymorphicComponent from './exercises/react/PolymorphicComponent'
+import SlotsPattern from './exercises/react/SlotsPattern'
 import UseHook from './exercises/react/UseHook'
 import UseOptimistic from './exercises/react/UseOptimistic'
 import FormActions from './exercises/react/FormActions'
+import UseTransition from './exercises/react/UseTransition'
+import UseDeferredValue from './exercises/react/UseDeferredValue'
+import UseId from './exercises/react/UseId'
+import UseSyncExternalStore from './exercises/react/UseSyncExternalStore'
 import ReactMemo from './exercises/react/ReactMemo'
 import LazySuspense from './exercises/react/LazySuspense'
 import ErrorBoundaries from './exercises/react/ErrorBoundaries'
+import MemoChildPitfall from './exercises/react/MemoChildPitfall'
+import VirtualizedTable from './exercises/react/VirtualizedTable'
+import RouteCodeSplit from './exercises/react/RouteCodeSplit'
+import WhyDidYouRender from './exercises/react/WhyDidYouRender'
 import TypescriptProps from './exercises/react/TypescriptProps'
 import EventTypes from './exercises/react/EventTypes'
 import CustomHooksTyping from './exercises/react/CustomHooksTyping'
+import GenericComponents from './exercises/react/GenericComponents'
+import DiscriminatedProps from './exercises/react/DiscriminatedProps'
+import ForwardRefTyped from './exercises/react/ForwardRefTyped'
+import TypedContext from './exercises/react/TypedContext'
 
 // E2E exercises
 import E2EScratch       from './exercises/e2e/Scratch'
@@ -34,6 +53,10 @@ import Dashboard        from './exercises/e2e/Dashboard'
 import UserPosts        from './exercises/e2e/UserPosts'
 import NewUserWithPost  from './exercises/e2e/NewUserWithPost'
 import AdvancedSearch   from './exercises/e2e/AdvancedSearch'
+import CommentsThreaded from './exercises/e2e/CommentsThreaded'
+import TagsManyToMany   from './exercises/e2e/TagsManyToMany'
+import CascadeBehaviors from './exercises/e2e/CascadeBehaviors'
+import OptimisticTodos  from './exercises/e2e/OptimisticTodos'
 
 // Component showcase
 import ButtonShowcase      from './exercises/components/Button'
@@ -41,6 +64,11 @@ import NavbarShowcase      from './exercises/components/Navbar'
 import FormShowcase        from './exercises/components/Form'
 import FooterShowcase      from './exercises/components/Footer'
 import AnimatedLayoutShowcase from './exercises/components/AnimatedLayout'
+import ModalShowcase       from './exercises/components/Modal'
+import ToastShowcase       from './exercises/components/Toast'
+import DropdownShowcase    from './exercises/components/Dropdown'
+import TabsShowcase        from './exercises/components/Tabs'
+import AccordionShowcase   from './exercises/components/Accordion'
 
 // UI Lab — clone-to-rebuild aesthetic practice
 import StyledInputPage         from './exercises/ui-lab/StyledInput'
@@ -59,24 +87,55 @@ import CourseCardPage          from './exercises/ui-lab/CourseCard'
 import FriendsScorePage        from './exercises/ui-lab/FriendsScore'
 import PerformanceChartPage    from './exercises/ui-lab/PerformanceChart'
 import EducationDashboardPage  from './exercises/ui-lab/EducationDashboard'
+import ToggleSwitchPage        from './exercises/ui-lab/ToggleSwitch'
+import RadioCardsPage          from './exercises/ui-lab/RadioCards'
+import SkeletonLoaderPage      from './exercises/ui-lab/SkeletonLoader'
+import AvatarStatusPage        from './exercises/ui-lab/AvatarStatus'
+import TooltipPage             from './exercises/ui-lab/Tooltip'
+import RangeSliderPage         from './exercises/ui-lab/RangeSlider'
+import PricingCardPage         from './exercises/ui-lab/PricingCard'
+import LoginCardPage           from './exercises/ui-lab/LoginCard'
+import StatTilePage            from './exercises/ui-lab/StatTile'
+import NotificationToastPage   from './exercises/ui-lab/NotificationToast'
+import SettingsPagePage        from './exercises/ui-lab/SettingsPage'
+import ChatLayoutPage          from './exercises/ui-lab/ChatLayout'
+import MusicPlayerPage         from './exercises/ui-lab/MusicPlayer'
+import CalendarMonthGridPage   from './exercises/ui-lab/CalendarMonthGrid'
+import WeatherWidgetPage       from './exercises/ui-lab/WeatherWidget'
+import PokemonCardPage         from './exercises/ui-lab/PokemonCard'
+import CryptoTickerPage        from './exercises/ui-lab/CryptoTicker'
+import GiphySearchPage         from './exercises/ui-lab/GiphySearch'
 
 // Drizzle exercises
 import SchemaDefinition from './exercises/drizzle/SchemaDefinition'
 import Migrations from './exercises/drizzle/Migrations'
 import DbConnection from './exercises/drizzle/DbConnection'
+import Enums from './exercises/drizzle/Enums'
+import Indexes from './exercises/drizzle/Indexes'
+import DefaultsTimestamps from './exercises/drizzle/DefaultsTimestamps'
 import Insert from './exercises/drizzle/Insert'
 import Select from './exercises/drizzle/Select'
 import Update from './exercises/drizzle/Update'
 import Delete from './exercises/drizzle/Delete'
+import BulkInsert from './exercises/drizzle/BulkInsert'
+import Upsert from './exercises/drizzle/Upsert'
+import SoftDelete from './exercises/drizzle/SoftDelete'
+import ConditionalUpdate from './exercises/drizzle/ConditionalUpdate'
 import WhereClauses from './exercises/drizzle/WhereClauses'
 import Joins from './exercises/drizzle/Joins'
 import RelationsApi from './exercises/drizzle/RelationsApi'
 import Pagination from './exercises/drizzle/Pagination'
 import Aggregates from './exercises/drizzle/Aggregates'
+import AndOrGroups from './exercises/drizzle/AndOrGroups'
+import Subqueries from './exercises/drizzle/Subqueries'
+import GroupByHaving from './exercises/drizzle/GroupByHaving'
 import Transactions from './exercises/drizzle/Transactions'
 import PreparedStatements from './exercises/drizzle/PreparedStatements'
 import SqlTag from './exercises/drizzle/SqlTag'
 import TypeInference from './exercises/drizzle/TypeInference'
+import JsonColumns from './exercises/drizzle/JsonColumns'
+import CustomTypes from './exercises/drizzle/CustomTypes'
+import QueryLogging from './exercises/drizzle/QueryLogging'
 
 const nav: Array<{
   group: string
@@ -97,6 +156,10 @@ const nav: Array<{
           { path: 'use-effect', label: 'useEffect' },
           { path: 'use-ref', label: 'useRef' },
           { path: 'use-memo-callback', label: 'useMemo / useCallback' },
+          { path: 'use-state-form', label: 'useState — Multi-step Form' },
+          { path: 'use-effect-debounce', label: 'useEffect — Debounce' },
+          { path: 'use-ref-intersection', label: 'useRef — IntersectionObserver' },
+          { path: 'use-memo-virtual-list', label: 'useMemo — Virtual List' },
         ],
       },
       {
@@ -107,6 +170,9 @@ const nav: Array<{
           { path: 'compound-components', label: 'Compound components' },
           { path: 'render-props', label: 'Render props' },
           { path: 'controlled-inputs', label: 'Controlled vs uncontrolled' },
+          { path: 'provider-composition', label: 'Provider composition' },
+          { path: 'polymorphic-component', label: 'Polymorphic component' },
+          { path: 'slots-pattern', label: 'Slots pattern' },
         ],
       },
       {
@@ -115,6 +181,10 @@ const nav: Array<{
           { path: 'use-hook', label: 'use()' },
           { path: 'use-optimistic', label: 'useOptimistic' },
           { path: 'form-actions', label: 'useFormStatus / useActionState' },
+          { path: 'use-transition', label: 'useTransition' },
+          { path: 'use-deferred-value', label: 'useDeferredValue' },
+          { path: 'use-id', label: 'useId' },
+          { path: 'use-sync-external-store', label: 'useSyncExternalStore' },
         ],
       },
       {
@@ -123,6 +193,10 @@ const nav: Array<{
           { path: 'react-memo', label: 'React.memo' },
           { path: 'lazy-suspense', label: 'lazy + Suspense' },
           { path: 'error-boundaries', label: 'Error boundaries' },
+          { path: 'memo-child-pitfall', label: 'memo pitfalls' },
+          { path: 'virtualized-table', label: 'Virtualized table' },
+          { path: 'route-code-split', label: 'Route code splitting' },
+          { path: 'why-did-you-render', label: 'Why did you render?' },
         ],
       },
       {
@@ -131,6 +205,10 @@ const nav: Array<{
           { path: 'typescript-props', label: 'Typing props' },
           { path: 'event-types', label: 'Event types' },
           { path: 'custom-hooks-typing', label: 'Typing custom hooks' },
+          { path: 'generic-components', label: 'Generic components' },
+          { path: 'discriminated-props', label: 'Discriminated prop unions' },
+          { path: 'forward-ref-typed', label: 'Typed forwardRef' },
+          { path: 'typed-context', label: 'Typed context' },
         ],
       },
     ],
@@ -144,6 +222,9 @@ const nav: Array<{
           { path: 'schema-definition', label: 'Schema definition' },
           { path: 'migrations', label: 'Migrations' },
           { path: 'db-connection', label: 'DB connection' },
+          { path: 'enums', label: 'Enums' },
+          { path: 'indexes', label: 'Indexes' },
+          { path: 'defaults-timestamps', label: 'Defaults + Timestamps' },
         ],
       },
       {
@@ -153,6 +234,10 @@ const nav: Array<{
           { path: 'select', label: 'Select' },
           { path: 'update', label: 'Update' },
           { path: 'delete', label: 'Delete' },
+          { path: 'bulk-insert', label: 'Bulk insert' },
+          { path: 'upsert', label: 'Upsert' },
+          { path: 'soft-delete', label: 'Soft delete' },
+          { path: 'conditional-update', label: 'Conditional update' },
         ],
       },
       {
@@ -163,6 +248,9 @@ const nav: Array<{
           { path: 'relations-api', label: 'Relations API' },
           { path: 'pagination', label: 'Ordering + Pagination' },
           { path: 'aggregates', label: 'Aggregates' },
+          { path: 'and-or-groups', label: 'AND / OR groups' },
+          { path: 'subqueries', label: 'Subqueries' },
+          { path: 'group-by-having', label: 'Group by + Having' },
         ],
       },
       {
@@ -172,6 +260,9 @@ const nav: Array<{
           { path: 'prepared-statements', label: 'Prepared statements' },
           { path: 'sql-tag', label: 'sql template tag' },
           { path: 'type-inference', label: 'Type inference' },
+          { path: 'json-columns', label: 'JSON columns' },
+          { path: 'custom-types', label: 'Custom types' },
+          { path: 'query-logging', label: 'Query logging' },
         ],
       },
     ],
@@ -187,6 +278,12 @@ const nav: Array<{
           { path: 'animated-button',  label: 'Animated Button' },
           { path: 'pill-tab-nav',     label: 'Pill Tab Nav' },
           { path: 'icon-rail',        label: 'Icon Rail Sidebar' },
+          { path: 'toggle-switch',    label: 'Toggle Switch' },
+          { path: 'radio-cards',      label: 'Radio Cards' },
+          { path: 'skeleton-loader',  label: 'Skeleton Loader' },
+          { path: 'avatar-status',    label: 'Avatar + Status' },
+          { path: 'tooltip',          label: 'Tooltip' },
+          { path: 'range-slider',     label: 'Range Slider' },
         ],
       },
       {
@@ -197,6 +294,10 @@ const nav: Array<{
           { path: 'magic-link',       label: 'Magic Link Screen' },
           { path: 'course-card',      label: 'Course Card' },
           { path: 'friends-score',    label: 'Friends Score' },
+          { path: 'pricing-card',     label: 'Pricing Card' },
+          { path: 'login-card',       label: 'Login Card' },
+          { path: 'stat-tile',        label: 'Stat Tile' },
+          { path: 'notification-toast', label: 'Notification Toast' },
         ],
       },
       {
@@ -207,6 +308,10 @@ const nav: Array<{
           { path: 'infinite-scroll',     label: 'Infinite Scroll Feed' },
           { path: 'performance-chart',   label: 'Performance Chart' },
           { path: 'education-dashboard', label: 'Education Dashboard' },
+          { path: 'settings-page',       label: 'Settings Page' },
+          { path: 'chat-layout',         label: 'Chat Layout' },
+          { path: 'music-player',        label: 'Music Player' },
+          { path: 'calendar-month',      label: 'Calendar Month Grid' },
         ],
       },
       {
@@ -214,6 +319,10 @@ const nav: Array<{
         items: [
           { path: 'github-user',      label: 'GitHub User Card' },
           { path: 'jsonplaceholder',  label: 'JSONPlaceholder Feed' },
+          { path: 'weather-widget',   label: 'Weather Widget' },
+          { path: 'pokemon-card',     label: 'Pokémon Card' },
+          { path: 'crypto-ticker',    label: 'Crypto Ticker' },
+          { path: 'giphy-search',     label: 'GIF Search' },
         ],
       },
     ],
@@ -230,6 +339,11 @@ const nav: Array<{
           { path: 'form',             label: 'Form' },
           { path: 'footer',           label: 'Footer' },
           { path: 'animated-layout',  label: 'Animated Layout' },
+          { path: 'modal',            label: 'Modal' },
+          { path: 'toast',            label: 'Toast' },
+          { path: 'dropdown',         label: 'Dropdown' },
+          { path: 'tabs',             label: 'Tabs' },
+          { path: 'accordion',        label: 'Accordion' },
         ],
       },
     ],
@@ -253,6 +367,10 @@ const nav: Array<{
           { path: 'user-posts',         label: 'User Posts — Relations API' },
           { path: 'new-user-with-post', label: 'New User + Post — Transaction' },
           { path: 'advanced-search',    label: 'Advanced Search — Prepared Statements' },
+          { path: 'comments-threaded',  label: 'Threaded Comments — Self FK' },
+          { path: 'tags-many-to-many',  label: 'Tags — Many-to-Many' },
+          { path: 'cascade-behaviors',  label: 'Cascade Behaviors' },
+          { path: 'optimistic-todos',   label: 'Optimistic Todos' },
         ],
       },
     ],
@@ -299,38 +417,70 @@ export default function App() {
           <Route path="/exercises/react/use-effect" element={<UseEffect />} />
           <Route path="/exercises/react/use-ref" element={<UseRef />} />
           <Route path="/exercises/react/use-memo-callback" element={<UseMemoCallback />} />
+          <Route path="/exercises/react/use-state-form" element={<UseStateForm />} />
+          <Route path="/exercises/react/use-effect-debounce" element={<UseEffectDebounce />} />
+          <Route path="/exercises/react/use-ref-intersection" element={<UseRefIntersection />} />
+          <Route path="/exercises/react/use-memo-virtual-list" element={<UseMemoVirtualList />} />
           <Route path="/exercises/react/context" element={<ContextUseContext />} />
           <Route path="/exercises/react/custom-hooks" element={<CustomHooks />} />
           <Route path="/exercises/react/compound-components" element={<CompoundComponents />} />
           <Route path="/exercises/react/render-props" element={<RenderProps />} />
           <Route path="/exercises/react/controlled-inputs" element={<ControlledInputs />} />
+          <Route path="/exercises/react/provider-composition" element={<ProviderComposition />} />
+          <Route path="/exercises/react/polymorphic-component" element={<PolymorphicComponent />} />
+          <Route path="/exercises/react/slots-pattern" element={<SlotsPattern />} />
           <Route path="/exercises/react/use-hook" element={<UseHook />} />
           <Route path="/exercises/react/use-optimistic" element={<UseOptimistic />} />
           <Route path="/exercises/react/form-actions" element={<FormActions />} />
+          <Route path="/exercises/react/use-transition" element={<UseTransition />} />
+          <Route path="/exercises/react/use-deferred-value" element={<UseDeferredValue />} />
+          <Route path="/exercises/react/use-id" element={<UseId />} />
+          <Route path="/exercises/react/use-sync-external-store" element={<UseSyncExternalStore />} />
           <Route path="/exercises/react/react-memo" element={<ReactMemo />} />
           <Route path="/exercises/react/lazy-suspense" element={<LazySuspense />} />
           <Route path="/exercises/react/error-boundaries" element={<ErrorBoundaries />} />
+          <Route path="/exercises/react/memo-child-pitfall" element={<MemoChildPitfall />} />
+          <Route path="/exercises/react/virtualized-table" element={<VirtualizedTable />} />
+          <Route path="/exercises/react/route-code-split" element={<RouteCodeSplit />} />
+          <Route path="/exercises/react/why-did-you-render" element={<WhyDidYouRender />} />
           <Route path="/exercises/react/typescript-props" element={<TypescriptProps />} />
           <Route path="/exercises/react/event-types" element={<EventTypes />} />
           <Route path="/exercises/react/custom-hooks-typing" element={<CustomHooksTyping />} />
+          <Route path="/exercises/react/generic-components" element={<GenericComponents />} />
+          <Route path="/exercises/react/discriminated-props" element={<DiscriminatedProps />} />
+          <Route path="/exercises/react/forward-ref-typed" element={<ForwardRefTyped />} />
+          <Route path="/exercises/react/typed-context" element={<TypedContext />} />
 
           {/* Drizzle */}
           <Route path="/exercises/drizzle/schema-definition" element={<SchemaDefinition />} />
           <Route path="/exercises/drizzle/migrations" element={<Migrations />} />
           <Route path="/exercises/drizzle/db-connection" element={<DbConnection />} />
+          <Route path="/exercises/drizzle/enums" element={<Enums />} />
+          <Route path="/exercises/drizzle/indexes" element={<Indexes />} />
+          <Route path="/exercises/drizzle/defaults-timestamps" element={<DefaultsTimestamps />} />
           <Route path="/exercises/drizzle/insert" element={<Insert />} />
           <Route path="/exercises/drizzle/select" element={<Select />} />
           <Route path="/exercises/drizzle/update" element={<Update />} />
           <Route path="/exercises/drizzle/delete" element={<Delete />} />
+          <Route path="/exercises/drizzle/bulk-insert" element={<BulkInsert />} />
+          <Route path="/exercises/drizzle/upsert" element={<Upsert />} />
+          <Route path="/exercises/drizzle/soft-delete" element={<SoftDelete />} />
+          <Route path="/exercises/drizzle/conditional-update" element={<ConditionalUpdate />} />
           <Route path="/exercises/drizzle/where-clauses" element={<WhereClauses />} />
           <Route path="/exercises/drizzle/joins" element={<Joins />} />
           <Route path="/exercises/drizzle/relations-api" element={<RelationsApi />} />
           <Route path="/exercises/drizzle/pagination" element={<Pagination />} />
           <Route path="/exercises/drizzle/aggregates" element={<Aggregates />} />
+          <Route path="/exercises/drizzle/and-or-groups" element={<AndOrGroups />} />
+          <Route path="/exercises/drizzle/subqueries" element={<Subqueries />} />
+          <Route path="/exercises/drizzle/group-by-having" element={<GroupByHaving />} />
           <Route path="/exercises/drizzle/transactions" element={<Transactions />} />
           <Route path="/exercises/drizzle/prepared-statements" element={<PreparedStatements />} />
           <Route path="/exercises/drizzle/sql-tag" element={<SqlTag />} />
           <Route path="/exercises/drizzle/type-inference" element={<TypeInference />} />
+          <Route path="/exercises/drizzle/json-columns" element={<JsonColumns />} />
+          <Route path="/exercises/drizzle/custom-types" element={<CustomTypes />} />
+          <Route path="/exercises/drizzle/query-logging" element={<QueryLogging />} />
 
           {/* UI Lab */}
           <Route path="/exercises/ui-lab/styled-input"     element={<StyledInputPage />} />
@@ -349,6 +499,24 @@ export default function App() {
           <Route path="/exercises/ui-lab/friends-score"        element={<FriendsScorePage />} />
           <Route path="/exercises/ui-lab/performance-chart"    element={<PerformanceChartPage />} />
           <Route path="/exercises/ui-lab/education-dashboard"  element={<EducationDashboardPage />} />
+          <Route path="/exercises/ui-lab/toggle-switch"        element={<ToggleSwitchPage />} />
+          <Route path="/exercises/ui-lab/radio-cards"          element={<RadioCardsPage />} />
+          <Route path="/exercises/ui-lab/skeleton-loader"      element={<SkeletonLoaderPage />} />
+          <Route path="/exercises/ui-lab/avatar-status"        element={<AvatarStatusPage />} />
+          <Route path="/exercises/ui-lab/tooltip"              element={<TooltipPage />} />
+          <Route path="/exercises/ui-lab/range-slider"         element={<RangeSliderPage />} />
+          <Route path="/exercises/ui-lab/pricing-card"         element={<PricingCardPage />} />
+          <Route path="/exercises/ui-lab/login-card"           element={<LoginCardPage />} />
+          <Route path="/exercises/ui-lab/stat-tile"            element={<StatTilePage />} />
+          <Route path="/exercises/ui-lab/notification-toast"   element={<NotificationToastPage />} />
+          <Route path="/exercises/ui-lab/settings-page"        element={<SettingsPagePage />} />
+          <Route path="/exercises/ui-lab/chat-layout"          element={<ChatLayoutPage />} />
+          <Route path="/exercises/ui-lab/music-player"         element={<MusicPlayerPage />} />
+          <Route path="/exercises/ui-lab/calendar-month"       element={<CalendarMonthGridPage />} />
+          <Route path="/exercises/ui-lab/weather-widget"       element={<WeatherWidgetPage />} />
+          <Route path="/exercises/ui-lab/pokemon-card"         element={<PokemonCardPage />} />
+          <Route path="/exercises/ui-lab/crypto-ticker"        element={<CryptoTickerPage />} />
+          <Route path="/exercises/ui-lab/giphy-search"         element={<GiphySearchPage />} />
 
           {/* Components */}
           <Route path="/exercises/components/button"           element={<ButtonShowcase />} />
@@ -356,6 +524,11 @@ export default function App() {
           <Route path="/exercises/components/form"             element={<FormShowcase />} />
           <Route path="/exercises/components/footer"           element={<FooterShowcase />} />
           <Route path="/exercises/components/animated-layout"  element={<AnimatedLayoutShowcase />} />
+          <Route path="/exercises/components/modal"            element={<ModalShowcase />} />
+          <Route path="/exercises/components/toast"            element={<ToastShowcase />} />
+          <Route path="/exercises/components/dropdown"         element={<DropdownShowcase />} />
+          <Route path="/exercises/components/tabs"             element={<TabsShowcase />} />
+          <Route path="/exercises/components/accordion"        element={<AccordionShowcase />} />
 
           {/* End to End */}
           <Route path="/exercises/e2e/scratch"            element={<E2EScratch />} />
@@ -367,6 +540,10 @@ export default function App() {
           <Route path="/exercises/e2e/user-posts"         element={<UserPosts />} />
           <Route path="/exercises/e2e/new-user-with-post" element={<NewUserWithPost />} />
           <Route path="/exercises/e2e/advanced-search"    element={<AdvancedSearch />} />
+          <Route path="/exercises/e2e/comments-threaded"  element={<CommentsThreaded />} />
+          <Route path="/exercises/e2e/tags-many-to-many"  element={<TagsManyToMany />} />
+          <Route path="/exercises/e2e/cascade-behaviors"  element={<CascadeBehaviors />} />
+          <Route path="/exercises/e2e/optimistic-todos"   element={<OptimisticTodos />} />
         </Routes>
       </main>
     </div>
