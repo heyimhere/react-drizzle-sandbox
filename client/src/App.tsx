@@ -35,14 +35,6 @@ import MemoChildPitfall from './exercises/react/MemoChildPitfall'
 import VirtualizedTable from './exercises/react/VirtualizedTable'
 import RouteCodeSplit from './exercises/react/RouteCodeSplit'
 import WhyDidYouRender from './exercises/react/WhyDidYouRender'
-import TypescriptProps from './exercises/react/TypescriptProps'
-import EventTypes from './exercises/react/EventTypes'
-import CustomHooksTyping from './exercises/react/CustomHooksTyping'
-import GenericComponents from './exercises/react/GenericComponents'
-import DiscriminatedProps from './exercises/react/DiscriminatedProps'
-import ForwardRefTyped from './exercises/react/ForwardRefTyped'
-import TypedContext from './exercises/react/TypedContext'
-
 // E2E exercises
 import E2EScratch       from './exercises/e2e/Scratch'
 import TodosCrud        from './exercises/e2e/TodosCrud'
@@ -137,6 +129,52 @@ import JsonColumns from './exercises/drizzle/JsonColumns'
 import CustomTypes from './exercises/drizzle/CustomTypes'
 import QueryLogging from './exercises/drizzle/QueryLogging'
 
+// TypeScript exercises
+import BasicTypes from './exercises/typescript/BasicTypes'
+import ArraysTuples from './exercises/typescript/ArraysTuples'
+import ObjectTypes from './exercises/typescript/ObjectTypes'
+import InterfacesVsAliases from './exercises/typescript/InterfacesVsAliases'
+import FunctionTypes from './exercises/typescript/FunctionTypes'
+import LiteralTypes from './exercises/typescript/LiteralTypes'
+import UnionsIntersections from './exercises/typescript/UnionsIntersections'
+import TypeNarrowing from './exercises/typescript/TypeNarrowing'
+import TypeGuards from './exercises/typescript/TypeGuards'
+import DiscriminatedUnions from './exercises/typescript/DiscriminatedUnions'
+import NeverExhaustive from './exercises/typescript/NeverExhaustive'
+import AssertionFunctions from './exercises/typescript/AssertionFunctions'
+import GenericFunctions from './exercises/typescript/GenericFunctions'
+import GenericConstraints from './exercises/typescript/GenericConstraints'
+import DefaultTypeParams from './exercises/typescript/DefaultTypeParams'
+import GenericInterfaces from './exercises/typescript/GenericInterfaces'
+import ConstTypeParams from './exercises/typescript/ConstTypeParams'
+import BuiltInUtilities from './exercises/typescript/BuiltInUtilities'
+import ExtractExclude from './exercises/typescript/ExtractExclude'
+import ReturnTypeParameters from './exercises/typescript/ReturnTypeParameters'
+import MappedTypes from './exercises/typescript/MappedTypes'
+import KeyRemapping from './exercises/typescript/KeyRemapping'
+import TemplateLiteralTypes from './exercises/typescript/TemplateLiteralTypes'
+import TypescriptProps from './exercises/typescript/TypescriptProps'
+import EventTypes from './exercises/typescript/EventTypes'
+import CustomHooksTyping from './exercises/typescript/CustomHooksTyping'
+import GenericComponents from './exercises/typescript/GenericComponents'
+import DiscriminatedProps from './exercises/typescript/DiscriminatedProps'
+import ForwardRefTyped from './exercises/typescript/ForwardRefTyped'
+import TypedContext from './exercises/typescript/TypedContext'
+import TypingReducers from './exercises/typescript/TypingReducers'
+import PolymorphicAsProp from './exercises/typescript/PolymorphicAsProp'
+import ChildrenTypes from './exercises/typescript/ChildrenTypes'
+import TypedExpressHandlers from './exercises/typescript/TypedExpressHandlers'
+import DrizzleInferSelectInsert from './exercises/typescript/DrizzleInferSelectInsert'
+import DrizzleInferModelHelpers from './exercises/typescript/DrizzleInferModelHelpers'
+import ZodValidatedBodies from './exercises/typescript/ZodValidatedBodies'
+import SharedDtoTypes from './exercises/typescript/SharedDtoTypes'
+import BrandedIds from './exercises/typescript/BrandedIds'
+import SatisfiesOperator from './exercises/typescript/SatisfiesOperator'
+import ConditionalTypes from './exercises/typescript/ConditionalTypes'
+import ModuleAugmentation from './exercises/typescript/ModuleAugmentation'
+import StrictFlagsTour from './exercises/typescript/StrictFlagsTour'
+import TypeLevelTests from './exercises/typescript/TypeLevelTests'
+
 const nav: Array<{
   group: string
   groupPath?: string
@@ -199,18 +237,6 @@ const nav: Array<{
           { path: 'why-did-you-render', label: 'Why did you render?' },
         ],
       },
-      {
-        label: 'Tier 5 — TypeScript × React',
-        items: [
-          { path: 'typescript-props', label: 'Typing props' },
-          { path: 'event-types', label: 'Event types' },
-          { path: 'custom-hooks-typing', label: 'Typing custom hooks' },
-          { path: 'generic-components', label: 'Generic components' },
-          { path: 'discriminated-props', label: 'Discriminated prop unions' },
-          { path: 'forward-ref-typed', label: 'Typed forwardRef' },
-          { path: 'typed-context', label: 'Typed context' },
-        ],
-      },
     ],
   },
   {
@@ -263,6 +289,91 @@ const nav: Array<{
           { path: 'json-columns', label: 'JSON columns' },
           { path: 'custom-types', label: 'Custom types' },
           { path: 'query-logging', label: 'Query logging' },
+        ],
+      },
+    ],
+  },
+  {
+    group: 'TypeScript',
+    groupPath: 'typescript',
+    tiers: [
+      {
+        label: 'Tier 1 — Fundamentals',
+        items: [
+          { path: 'basic-types', label: 'Basic types' },
+          { path: 'arrays-tuples', label: 'Arrays & tuples' },
+          { path: 'object-types', label: 'Object types' },
+          { path: 'interfaces-vs-aliases', label: 'Interfaces vs type aliases' },
+          { path: 'function-types', label: 'Function types' },
+          { path: 'literal-types', label: 'Literal types' },
+        ],
+      },
+      {
+        label: 'Tier 2 — Unions & Narrowing',
+        items: [
+          { path: 'unions-intersections', label: 'Unions & intersections' },
+          { path: 'type-narrowing', label: 'Type narrowing' },
+          { path: 'type-guards', label: 'User-defined type guards' },
+          { path: 'discriminated-unions', label: 'Discriminated unions' },
+          { path: 'never-exhaustive', label: 'never & exhaustive checks' },
+          { path: 'assertion-functions', label: 'Assertion functions' },
+        ],
+      },
+      {
+        label: 'Tier 3 — Generics',
+        items: [
+          { path: 'generic-functions', label: 'Generic functions' },
+          { path: 'generic-constraints', label: 'Generic constraints' },
+          { path: 'default-type-params', label: 'Default type params' },
+          { path: 'generic-interfaces', label: 'Generic interfaces & classes' },
+          { path: 'const-type-params', label: 'const type params' },
+        ],
+      },
+      {
+        label: 'Tier 4 — Utility & Mapped Types',
+        items: [
+          { path: 'built-in-utilities', label: 'Built-in utilities' },
+          { path: 'extract-exclude', label: 'Extract / Exclude / NonNullable' },
+          { path: 'returntype-parameters', label: 'ReturnType / Parameters / Awaited' },
+          { path: 'mapped-types', label: 'Mapped types' },
+          { path: 'key-remapping', label: 'Key remapping (as)' },
+          { path: 'template-literal-types', label: 'Template literal types' },
+        ],
+      },
+      {
+        label: 'Tier 5 — TypeScript × React',
+        items: [
+          { path: 'typing-props', label: 'Typing props' },
+          { path: 'event-types', label: 'Event types' },
+          { path: 'typing-custom-hooks', label: 'Typing custom hooks' },
+          { path: 'generic-components', label: 'Generic components' },
+          { path: 'discriminated-component-props', label: 'Discriminated prop unions' },
+          { path: 'typed-forward-ref', label: 'Typed forwardRef' },
+          { path: 'typed-context', label: 'Typed context' },
+          { path: 'typing-reducers', label: 'Typing useReducer' },
+          { path: 'polymorphic-as-prop', label: 'Polymorphic (as prop)' },
+          { path: 'children-types', label: 'Children types' },
+        ],
+      },
+      {
+        label: 'Tier 6 — TS × Backend',
+        items: [
+          { path: 'typed-express-handlers', label: 'Typed Express handlers' },
+          { path: 'drizzle-infer-select-insert', label: 'Drizzle $infer types' },
+          { path: 'drizzle-infermodel-helpers', label: 'InferSelectModel helpers' },
+          { path: 'zod-validated-bodies', label: 'Zod-validated bodies' },
+          { path: 'shared-dto-types', label: 'Shared DTOs (client ↔ server)' },
+          { path: 'branded-ids', label: 'Branded IDs' },
+        ],
+      },
+      {
+        label: 'Tier 7 — Advanced',
+        items: [
+          { path: 'satisfies-operator', label: 'satisfies operator' },
+          { path: 'conditional-types', label: 'Conditional types & infer' },
+          { path: 'module-augmentation', label: 'Module augmentation' },
+          { path: 'strict-flags-tour', label: 'strict flags tour' },
+          { path: 'type-level-tests', label: 'Type-level tests' },
         ],
       },
     ],
@@ -443,13 +554,6 @@ export default function App() {
           <Route path="/exercises/react/virtualized-table" element={<VirtualizedTable />} />
           <Route path="/exercises/react/route-code-split" element={<RouteCodeSplit />} />
           <Route path="/exercises/react/why-did-you-render" element={<WhyDidYouRender />} />
-          <Route path="/exercises/react/typescript-props" element={<TypescriptProps />} />
-          <Route path="/exercises/react/event-types" element={<EventTypes />} />
-          <Route path="/exercises/react/custom-hooks-typing" element={<CustomHooksTyping />} />
-          <Route path="/exercises/react/generic-components" element={<GenericComponents />} />
-          <Route path="/exercises/react/discriminated-props" element={<DiscriminatedProps />} />
-          <Route path="/exercises/react/forward-ref-typed" element={<ForwardRefTyped />} />
-          <Route path="/exercises/react/typed-context" element={<TypedContext />} />
 
           {/* Drizzle */}
           <Route path="/exercises/drizzle/schema-definition" element={<SchemaDefinition />} />
@@ -481,6 +585,52 @@ export default function App() {
           <Route path="/exercises/drizzle/json-columns" element={<JsonColumns />} />
           <Route path="/exercises/drizzle/custom-types" element={<CustomTypes />} />
           <Route path="/exercises/drizzle/query-logging" element={<QueryLogging />} />
+
+          {/* TypeScript */}
+          <Route path="/exercises/typescript/basic-types"                   element={<BasicTypes />} />
+          <Route path="/exercises/typescript/arrays-tuples"                 element={<ArraysTuples />} />
+          <Route path="/exercises/typescript/object-types"                  element={<ObjectTypes />} />
+          <Route path="/exercises/typescript/interfaces-vs-aliases"         element={<InterfacesVsAliases />} />
+          <Route path="/exercises/typescript/function-types"                element={<FunctionTypes />} />
+          <Route path="/exercises/typescript/literal-types"                 element={<LiteralTypes />} />
+          <Route path="/exercises/typescript/unions-intersections"          element={<UnionsIntersections />} />
+          <Route path="/exercises/typescript/type-narrowing"                element={<TypeNarrowing />} />
+          <Route path="/exercises/typescript/type-guards"                   element={<TypeGuards />} />
+          <Route path="/exercises/typescript/discriminated-unions"          element={<DiscriminatedUnions />} />
+          <Route path="/exercises/typescript/never-exhaustive"              element={<NeverExhaustive />} />
+          <Route path="/exercises/typescript/assertion-functions"           element={<AssertionFunctions />} />
+          <Route path="/exercises/typescript/generic-functions"             element={<GenericFunctions />} />
+          <Route path="/exercises/typescript/generic-constraints"           element={<GenericConstraints />} />
+          <Route path="/exercises/typescript/default-type-params"           element={<DefaultTypeParams />} />
+          <Route path="/exercises/typescript/generic-interfaces"            element={<GenericInterfaces />} />
+          <Route path="/exercises/typescript/const-type-params"             element={<ConstTypeParams />} />
+          <Route path="/exercises/typescript/built-in-utilities"            element={<BuiltInUtilities />} />
+          <Route path="/exercises/typescript/extract-exclude"               element={<ExtractExclude />} />
+          <Route path="/exercises/typescript/returntype-parameters"         element={<ReturnTypeParameters />} />
+          <Route path="/exercises/typescript/mapped-types"                  element={<MappedTypes />} />
+          <Route path="/exercises/typescript/key-remapping"                 element={<KeyRemapping />} />
+          <Route path="/exercises/typescript/template-literal-types"        element={<TemplateLiteralTypes />} />
+          <Route path="/exercises/typescript/typing-props"                  element={<TypescriptProps />} />
+          <Route path="/exercises/typescript/event-types"                   element={<EventTypes />} />
+          <Route path="/exercises/typescript/typing-custom-hooks"           element={<CustomHooksTyping />} />
+          <Route path="/exercises/typescript/generic-components"            element={<GenericComponents />} />
+          <Route path="/exercises/typescript/discriminated-component-props" element={<DiscriminatedProps />} />
+          <Route path="/exercises/typescript/typed-forward-ref"             element={<ForwardRefTyped />} />
+          <Route path="/exercises/typescript/typed-context"                 element={<TypedContext />} />
+          <Route path="/exercises/typescript/typing-reducers"               element={<TypingReducers />} />
+          <Route path="/exercises/typescript/polymorphic-as-prop"           element={<PolymorphicAsProp />} />
+          <Route path="/exercises/typescript/children-types"                element={<ChildrenTypes />} />
+          <Route path="/exercises/typescript/typed-express-handlers"        element={<TypedExpressHandlers />} />
+          <Route path="/exercises/typescript/drizzle-infer-select-insert"   element={<DrizzleInferSelectInsert />} />
+          <Route path="/exercises/typescript/drizzle-infermodel-helpers"    element={<DrizzleInferModelHelpers />} />
+          <Route path="/exercises/typescript/zod-validated-bodies"          element={<ZodValidatedBodies />} />
+          <Route path="/exercises/typescript/shared-dto-types"              element={<SharedDtoTypes />} />
+          <Route path="/exercises/typescript/branded-ids"                   element={<BrandedIds />} />
+          <Route path="/exercises/typescript/satisfies-operator"            element={<SatisfiesOperator />} />
+          <Route path="/exercises/typescript/conditional-types"             element={<ConditionalTypes />} />
+          <Route path="/exercises/typescript/module-augmentation"           element={<ModuleAugmentation />} />
+          <Route path="/exercises/typescript/strict-flags-tour"             element={<StrictFlagsTour />} />
+          <Route path="/exercises/typescript/type-level-tests"              element={<TypeLevelTests />} />
 
           {/* UI Lab */}
           <Route path="/exercises/ui-lab/styled-input"     element={<StyledInputPage />} />
